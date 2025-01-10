@@ -1,0 +1,31 @@
+.kaushan-script-regular {
+    font-family: "Kaushan Script", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.quotes{
+    
+    display: flex;
+    flex-direction: column;
+
+
+}
+#quote{
+    height: auto;
+    width: auto;
+    border: 2px;
+    border-color: green;
+    box-shadow: 10px 10px red;
+}
+.quote-text{
+
+    color:white;
+    border-radius: 2rem;
+    font-family: "Kaushan Script", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.quote-author{
+    color: #fcc705;
+    display: flex;
+}

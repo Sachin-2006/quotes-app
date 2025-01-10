@@ -1,5 +1,7 @@
 import React,{useEffect, useState} from 'react'
-import axios from 'axios'
+import QuotesPrinter from "./QuotesPrinter"
+import "./QuotesPrinter.css"
+
 //https://go-quote.azurewebsites.net/docs/  
 
 function QuotesGenerator(){
@@ -10,7 +12,7 @@ useEffect(()=>{
     fetch("https://go-quote.azurewebsites.net/tags?page=1&page_size=100&format=json").then((resp)=>resp.json())
     .then((data)=>{
         if(Array.isArray(data.tags)){
-        const filt = data.tags.filter((tag)=>tag.total_quotes > 100)
+        const filt = data.tags.filter((tag)=>tag.total_quotes > 3000)
             console.log(filt);
         setQuotes(filt);
         }
@@ -19,15 +21,14 @@ useEffect(()=>{
     
 },[])
 
- 
+ //`https://go-quote.azurewebsites.net/tags/${item.tags_id}?page=1&page_size=20&format=json`
     return(<>
     {quotes.map((item)=>(
-    <p key={item.tags_id}><a href={`https://go-quote.azurewebsites.net/tags/${item.tags_id}?page=1&page_size=20&format=json`}> {item.name} </a></p>
+    <p key={item.tags_id}> <a href={`/mood/${item.tag_id}`}> {item.name} </a></p>
     
     )
     )}
-    dfskfjs
-    fsfpijd
+
     </>) 
 
 }
